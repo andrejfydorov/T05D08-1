@@ -62,7 +62,7 @@ void output(int *a, int n)
            {
                 if (*p >= m)
                 {
-                    if (abs((long)(*p - m)) < (3 * v) )
+                    if (abs((long)(*p - m)) < (3 * sqrt(v)) )
                     {
                         res = *p;
                     }

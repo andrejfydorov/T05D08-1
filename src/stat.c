@@ -91,15 +91,21 @@ double mean(int *a, int n) {
     double sum = 0;
     for(int *p = a; p - a < n; p++)
     {
-        sum += *p;
+        sum += (*p) * (1.0/n);
     }
 
-    return sum / n;
+    return sum;
 }
 
 double variance(int *a, int n) {
-
-    return mean(a, n) / 2;
+    double m1 = mean(a, n);
+    int arr[NMAX];
+    for(int *p = a; p - a < n; p++)
+    {
+        arr[p-a] = (*p) * (*p);
+    }
+    double m2 = mean(arr, n);
+    return m2 - (m1 * m1);
 }
 
 void output_result(int max_v,
